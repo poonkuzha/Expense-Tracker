@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Login Section -->
+    <div id="login-section">
+      <h2>Login</h2>
+      <input type="email" id="email" placeholder="Enter your Email" required>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Tracker Section -->
+    <div id="tracker-section" style="display: none;">
+      <h2>Welcome, <span id="userEmail"></span></h2>
+      <h3>Total Balance: ₹<span id="balance">0</span></h3>
+      <h4>Saved Amount: ₹<span id="saved">0</span></h4>
+      <h4>Spendable Balance: ₹<span id="spendable">0</span></h4>
+
+      <div class="form">
+        <input type="text" id="title" placeholder="Title">
+        <input type="number" id="amount" placeholder="Amount">
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <button onclick="addTransaction()">Add Transaction</button>
+      </div>
+
+      <ul id="transactions"></ul>
+    </div>
+
+    <!-- Popup Notification -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p id="popup-message"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
